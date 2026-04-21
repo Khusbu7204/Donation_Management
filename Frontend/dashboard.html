@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="checkLogin(); restrictUser(); loadUser(); getHistory();">
+
+<header>
+  <h1>User Dashboard</h1>
+  <nav>
+    <span id="profileName"></span>
+    <button class="btn-outline" onclick="logout()">Logout</button>
+  </nav>
+</header>
+
+<section class="features">
+
+  <!-- Donate -->
+  <div class="card">
+    <h3>Make Donation</h3>
+
+    <input id="amount" placeholder="Amount">
+    <input id="purpose" placeholder="Purpose">
+
+    <button onclick="donate()">Donate</button>
+  </div>
+
+  <!-- History -->
+  <div class="card">
+    <h3>Your Donations</h3>
+
+    <ul id="history"></ul>
+  </div>
+
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

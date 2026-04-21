@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- onload -->
+<body onload="checkLogin(); restrictAdmin(); loadStats(); loadAuditLogs(); loadAllocations(); loadExpenses();">
+
+<header>
+  <h1>Admin Panel</h1>
+  <nav>
+    <button class="btn-outline" onclick="logout()">Logout</button>
+  </nav>
+</header>
+
+<!-- STATS -->
+<section class="features">
+  <div class="card">
+    <h3>Total Donations</h3>
+    <p id="totalDonations">₹0</p>
+  </div>
+
+  <div class="card">
+    <h3>Total Expenses</h3>
+    <p id="totalExpenses">₹0</p>
+  </div>
+
+  <div class="card">
+    <h3>Balance</h3>
+    <p id="balance">₹0</p>
+  </div>
+</section>
+
+<!-- ACTIONS -->
+<section class="features">
+
+  <!-- Allocate -->
+  <div class="card">
+    <h3>Allocate Funds</h3>
+
+    <input id="purposeAlloc" placeholder="Purpose">
+    <input id="amountAlloc" placeholder="Amount">
+
+    <button onclick="allocate()">Allocate</button>
+  </div>
+
+  <!-- Expense -->
+  <div class="card">
+    <h3>Add Expense</h3>
+
+    <input id="expenseTitle" placeholder="Title">
+    <input id="expenseAmount" placeholder="Amount">
+
+    <button onclick="addExpense()">Add Expense</button>
+  </div>
+
+</section>
+
+<!-- AUDIT LOGS -->
+<section class="features">
+  <div class="card" style="width: 80%;">
+    <h3>Recent Activity (Audit Logs)</h3>
+    <ul id="auditList"></ul>
+  </div>
+</section>
+
+<!-- HISTORY SECTION -->
+<section class="features">
+
+  <!-- Allocation History -->
+  <div class="card">
+    <h3>Allocation History</h3>
+    <ul id="allocationList"></ul>
+  </div>
+
+  <!-- Expense History -->
+  <div class="card">
+    <h3>Expense History</h3>
+    <ul id="expenseList"></ul>
+  </div>
+
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
